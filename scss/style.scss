@@ -1,0 +1,120 @@
+@import "./normalize.scss";
+
+
+// === VARIABLES ===
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-l: 1200px;
+$screen-xl: 1400px;
+
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+$screen-l-max: 1399px;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+
+$font-logo: 'Inter', sans-serif;
+
+
+/*100: Thin;
+200: Extra Light (Ultra Light);
+300: Light;
+400: Normal;
+500: Medium;
+600: Semi Bold (Demi Bold);
+700: Bold;
+800: Extra Bold (Ultra Bold);
+900: Black (Heavy).*/
+
+// === / VARIABLES ===
+
+// === MIXINS ===
+
+@mixin font-main {
+  font-family: "CerebriSansPro", sans-serif;
+  font-style: normal;
+}
+// === / MIXINS ===
+
+// === COMMON ===
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+body {
+  max-width: 1920px;
+}
+.section-outer {
+  @include font-main;
+
+  max-width: 1920px;
+}
+.section-inner {
+  max-width: 1140px;
+}
+// === / COMMON ===
+
+// === HEADER ===
+.section-header {
+
+  .section-inner {}
+}
+// === /HEADER ===
+
+// === NAVBAR ===
+.section-navbar {
+
+  .section-inner {}
+}
+// === /NAVBAR ===
+
+// === MAIN ===
+.section-main {
+
+  .section-inner {}
+}
+// === /MAIN ===
+
+// === DRINKS ===
+.section-drinks {
+
+  .section-inner {}
+}
+// === /DRINKS ===
+
+// === LATEST ===
+.section-latest {
+
+  .section-inner {}
+}
+// === /LATEST ===
+
+// === CATEGORIES ===
+.section-categories {
+
+  .section-inner {}
+}
+// === /CATEGORIES ===
+
+// === BLOG ===
+.section-blog {
+
+  .section-inner {}
+}
+// === /BLOG ===
+
+// === FOOTER ===
+.section-footer {
+
+  .section-inner {}
+}
+// === /FOOTER ===
+

@@ -1,0 +1,125 @@
+/* Thin */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Thin.ttf');
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-ThinItalic.ttf');
+	font-weight: 100;
+	font-style: italic;
+}
+
+/* ExtraLight */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-ExtraLight.ttf');
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-ExtraLightItalic.ttf');
+	font-weight: 200;
+	font-style: italic;
+}
+
+/* Light */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Light.ttf');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-LightItalic.ttf');
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Regular */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Regular.ttf');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Italic.ttf');
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* Medium */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Medium.ttf');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-MediumItalic.ttf');
+	font-weight: 500;
+	font-style: italic;
+}
+
+/* SemiBold */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-SemiBold.ttf');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-SemiBoldItalic.ttf');
+	font-weight: 600;
+	font-style: italic;
+}
+
+/* Bold */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Bold.ttf');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-BoldItalic.ttf');
+	font-weight: 700;
+	font-style: italic;
+}
+
+/* ExtraBold */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-ExtraBold.ttf');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-ExtraBoldItalic.ttf');
+	font-weight: 800;
+	font-style: italic;
+}
+
+/* Heavy */
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-Heavy.ttf');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'CerebriSansPro';
+	src: url('./CerebriSansPro-HeavyItalic.ttf');
+	font-weight: 900;
+	font-style: italic;
+}
