@@ -354,15 +354,155 @@ template {
 }
 
 body {
-  max-width: 1920px;
+  font-family: "CerebriSansPro", sans-serif;
+  font-style: normal;
 }
 
 .section-outer {
-  font-family: "CerebriSansPro", sans-serif;
-  font-style: normal;
   max-width: 1920px;
 }
 
 .section-inner {
   max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section-header {
+  height: 47px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 14px;
+}
+.section-header .section-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.section-header-email {
+  flex: 0 1 160px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+.section-header-email__icon {
+  margin-right: 8px;
+}
+.section-header-proposal {
+  flex: 0 1 206px;
+  text-align: center;
+  font-weight: 600;
+  margin-right: 400px;
+}
+.section-header-social {
+  flex: 0 1 142px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-header-language {
+  flex: 0 1 162px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.section-header-language__icon {
+  margin-left: 40px;
+}
+.section-header-language__text {
+  margin-left: 9px;
+}
+.section-header-language__dropDownList {
+  margin-left: 12px;
+  margin-right: 25px;
+}
+.section-header-login {
+  flex: 0 1 82px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.section-header-login__icon {
+  margin-left: 24px;
+  margin-right: 10px;
+}
+.section-navbar .section-inner {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.section-navbar .logo {
+  padding-right: 91px;
+  cursor: pointer;
+}
+.section-navbar-panel {
+  display: flex;
+  align-items: center;
+  padding-right: 216px;
+}
+.section-navbar-panel__item {
+  padding: 0 20px 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #2a2a2a;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-navbar-panel__item:hover {
+  color: #7fad39;
+  transition: 0.4s;
+}
+.section-navbar-purchase {
+  display: flex;
+  align-items: center;
+}
+.section-navbar-purchase__item {
+  position: relative;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-navbar-purchase__item:hover {
+  background-color: #dddddd;
+  transition: 0.4s;
+}
+.section-navbar-purchase__value {
+  position: absolute;
+  top: -2px;
+  left: 19px;
+  z-index: 10;
+  box-sizing: content-box;
+  height: 14px;
+  width: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7fad39;
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ffffff;
+}
+.section-navbar-purchase__amount {
+  padding-left: 4px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #999999;
+}
+.section-navbar-purchase__amount_value {
+  color: #2a2a2a;
+  font-weight: 800;
 }
