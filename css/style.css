@@ -393,6 +393,37 @@ button:focus {
   outline: none;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  /*font-size: 18px;
+  background: #fff;*/
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .section-header {
   height: 47px;
   background-color: #2a2a2a;
@@ -768,4 +799,72 @@ button:focus {
 .section-drinks__button {
   width: 140px;
   height: 50px;
+}
+
+.section-latest__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+.section-latest__title-text {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 50px;
+  padding-right: 40px;
+}
+.section-latest__title .latest-slider-button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 100%;
+  transition: 0.4s;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.section-latest__title .latest-slider-button:hover {
+  background-color: #c2c2c2;
+  transition: 0.4s;
+}
+.section-latest__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.section-latest__item {
+  display: flex;
+  align-items: center;
+  width: 367px;
+  height: 110px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  transition: 0.4s;
+}
+.section-latest__item:hover {
+  background-color: #c2c2c2;
+  transition: 0.4s;
+}
+.section-latest__item-image {
+  margin-right: 20px;
+}
+.section-latest__item-image img {
+  width: 110px;
+}
+.section-latest__item-description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 20px;
+  line-height: 30px;
+}
+.section-latest__item-title {
+  font-weight: 400;
+}
+.section-latest__item-price {
+  font-weight: 900;
 }

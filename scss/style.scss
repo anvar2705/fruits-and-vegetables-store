@@ -100,6 +100,38 @@ button:focus {
   outline: none;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+//Swiper Slider
+.swiper-slide {
+  text-align: center;
+  /*font-size: 18px;
+  background: #fff;*/
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 // === / COMMON ===
 
 // === HEADER ===
@@ -606,8 +638,96 @@ button:focus {
 // === LATEST ===
 .section-latest {
 
-  .section-inner {
+  .section-inner {}
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 60px;
+
+    &-text {
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 50px;
+
+      padding-right: 40px;
+    }
+    .latest-slider-button {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-background;
+      border-radius: 100%;
+      transition: .4s;
+      cursor: pointer;
+
+      margin-right: 10px;
+      &:hover {
+        background-color: $color-background-dark;
+        transition: .4s;
+      }
+    }
+    .swiper-button-prev-custom {
+    }
+    .swiper-button-next-custom {
+    }
   }
+
+  &__wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+
+    width: 367px;
+    height: 110px;
+
+    cursor: pointer;
+    background-color: $color-background;
+    transition: .4s;
+
+    &:hover {
+      background-color: $color-background-dark;
+      transition: .4s;
+
+    }
+
+    &-image {
+      margin-right: 20px;
+
+      img {
+        width: 110px;
+      }
+    }
+    &-description {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      font-size: 20px;
+      line-height: 30px;
+    }
+    &-title {
+      font-weight: 400;
+    }
+    &-price {
+      font-weight: 900;
+    }
+  }
+
+
+
+
+
 }
 
 // === /LATEST ===
