@@ -19,7 +19,7 @@ $color-black: #000000;
 $color-main: #7fad39;
 $color-main-dark: #4f7d00;
 $color-text-main: #2a2a2a;
-$color-text-secondary: #999999;
+$color-text-secondary: #757575;
 $color-text-secondary-dark: #6b6b6b;
 $color-header: #2a2a2a;
 $color-footer: #191919;
@@ -93,6 +93,14 @@ body {
     transition: .4s;
   }
 }
+.line-main {
+  width: 80px;
+  height: 4px;
+  background-color: $color-main;
+  border: none;
+}
+
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -100,11 +108,14 @@ button:focus {
   outline: none;
 }
 
+
+//Swiper Slider
+
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 370px;
 }
-//Swiper Slider
+
 .swiper-slide {
   text-align: center;
   /*font-size: 18px;
@@ -185,6 +196,16 @@ button:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    img {
+      cursor: pointer;
+      transition: .4s;
+
+      &:hover {
+        opacity: .7;
+        transition: .4s;
+      }
+    }
   }
 
   &-language {
@@ -595,20 +616,38 @@ button:focus {
     height: 360px;
     padding-top: 100px;
   }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    z-index: -1;
+
+  }
+
   &__item {
     flex: 0 1 50%;
     height: 100%;
+
     margin-right: 20px;
 
     padding-left: 290px;
+
+    position: relative;
+
+    transition: .4s;
+
+    &:hover {
+      background-color: rgba(0,0,0, .3);
+      transition: .4s;
+    }
     &_1 {
-      background: url("../assets/images/drinks/image-1.png");
+      //background: url("../assets/images/drinks/image-1.png");
       background-size: cover;
       padding-top: 66px;
-
     }
     &_2 {
-      background: url("../assets/images/drinks/image-2.png");
+      //background: url("../assets/images/drinks/image-2.png");
       background-size: cover;
       padding-top: 56px;
     }
@@ -646,6 +685,7 @@ button:focus {
     justify-content: center;
 
     padding-top: 60px;
+    padding-bottom: 50px;
 
     &-text {
       font-weight: 900;
@@ -670,10 +710,6 @@ button:focus {
         background-color: $color-background-dark;
         transition: .4s;
       }
-    }
-    .swiper-button-prev-custom {
-    }
-    .swiper-button-next-custom {
     }
   }
 
@@ -732,19 +768,91 @@ button:focus {
 
 // === /LATEST ===
 
-// === CATEGORIES ===
-.section-categories {
-
-  .section-inner {
-  }
-}
-
-// === /CATEGORIES ===
 
 // === BLOG ===
 .section-blog {
 
+  height: 840px;
   .section-inner {
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 50px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 16px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 40px;
+  }
+  &__item {
+    max-width: 367px;
+
+
+    &-image {
+      background-color: $color-black;
+      img {
+        max-width: 367px;
+        cursor: pointer;
+        transition: .4s;
+        &:hover {
+          opacity: .7;
+          transition: .4s;
+        }
+      }
+    }
+    &-info {
+      padding-top: 20px;
+
+      display: flex;
+      align-items: center;
+    }
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $color-text-secondary;
+      padding-right: 24px;
+      &_comment {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &-icon {
+      padding-right: 12px;
+      &_comment {
+        cursor: pointer;
+      }
+    }
+    &-title {
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 30px;
+
+      padding-top: 20px;
+    }
+    &-subtitle {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-text-secondary;
+
+      padding-top: 30px;
+      &_link {
+        font-weight: 700;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
@@ -752,8 +860,124 @@ button:focus {
 
 // === FOOTER ===
 .section-footer {
+  height: 557px;
+  background-color: $color-footer;
+  color: $color-white;
 
   .section-inner {
+    display: grid;
+    grid-template-columns: 268px 174px 174px 460px;
+    grid-template-rows: minmax(350px, auto);
+    grid-template-areas:
+            "info links-1 links-2 subsc"
+            "rights rights rights paym";
+
+    padding-top: 60px;
+  }
+
+  &__info {
+    grid-area: info;
+
+    max-width: 268px;
+    padding-right: 20px;
+  }
+  &__logo {
+    padding-bottom: 34px;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 30px;
+
+    &_invisible {
+      opacity: 0;
+    }
+  }
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  &__links {
+    width: 174px;
+    padding-right: 20px;
+    &_1 {
+      grid-area: links-1;
+    }
+    &_2 {
+      grid-area: links-2;
+    }
+  }
+  &__list {
+    list-style: none;
+    padding-left: 0;
+
+    &_uppercase {
+      text-transform: uppercase;
+    }
+  }
+  &__item {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__subscribe {
+    grid-area: subsc;
+  }
+  &__form {
+    padding-top: 32px;
+    padding-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+
+    color: $color-text-secondary;
+
+    input {
+      width: 62%;
+      height: 60px;
+      border: 1px solid $color-border;
+      border-left: none;
+      padding-left: 20px;
+
+      font-size: 16px;
+      line-height: 19px;
+    }
+    button {
+      width: 38%;
+      height: 60px;
+      border: 1px solid $color-border;
+    }
+  }
+  &__social {
+    display: flex;
+    img {
+      margin-right: 24px;
+      cursor: pointer;
+      transition: .4s;
+
+      &:hover {
+        opacity: .7;
+        transition: .4s;
+      }
+    }
+  }
+  &__rights {
+    grid-area: rights;
+    margin-right: 20px;
+  }
+  &__payments {
+    grid-area: paym;
+    display: flex;
+    align-items: start;
+    &-item {
+      padding-right: 10px;
+    }
   }
 }
 

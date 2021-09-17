@@ -386,6 +386,13 @@ body {
   transition: 0.4s;
 }
 
+.line-main {
+  width: 80px;
+  height: 4px;
+  background-color: #7fad39;
+  border: none;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -395,7 +402,7 @@ button:focus {
 
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 370px;
 }
 
 .swiper-slide {
@@ -457,6 +464,14 @@ button:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.section-header-social img {
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-header-social img:hover {
+  opacity: 0.7;
+  transition: 0.4s;
 }
 .section-header-language {
   flex: 0 1 162px;
@@ -558,7 +573,7 @@ button:focus {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #999999;
+  color: #757575;
 }
 .section-navbar-purchase__amount_value {
   color: #2a2a2a;
@@ -671,7 +686,7 @@ button:focus {
 .section-main__support-text_gray {
   font-weight: 400;
   font-size: 12px;
-  color: #999999;
+  color: #757575;
 }
 .section-main__menu {
   grid-area: menu;
@@ -685,7 +700,7 @@ button:focus {
   font-weight: 400;
   font-size: 16px;
   line-height: 36px;
-  color: #999999;
+  color: #757575;
   padding: 0 20px 0;
   cursor: pointer;
 }
@@ -729,7 +744,7 @@ button:focus {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #999999;
+  color: #757575;
   padding-bottom: 60px;
 }
 .section-main__mainPost-button {
@@ -766,19 +781,30 @@ button:focus {
   height: 360px;
   padding-top: 100px;
 }
+.section-drinks__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  z-index: -1;
+}
 .section-drinks__item {
   flex: 0 1 50%;
   height: 100%;
   margin-right: 20px;
   padding-left: 290px;
+  position: relative;
+  transition: 0.4s;
+}
+.section-drinks__item:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
 }
 .section-drinks__item_1 {
-  background: url("../assets/images/drinks/image-1.png");
   background-size: cover;
   padding-top: 66px;
 }
 .section-drinks__item_2 {
-  background: url("../assets/images/drinks/image-2.png");
   background-size: cover;
   padding-top: 56px;
 }
@@ -806,6 +832,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   padding-top: 60px;
+  padding-bottom: 50px;
 }
 .section-latest__title-text {
   font-weight: 900;
@@ -867,4 +894,188 @@ button:focus {
 }
 .section-latest__item-price {
   font-weight: 900;
+}
+
+.section-blog {
+  height: 840px;
+}
+.section-blog__title {
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 50px;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 16px;
+}
+.section-blog__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.section-blog__item {
+  max-width: 367px;
+}
+.section-blog__item-image {
+  background-color: #000000;
+}
+.section-blog__item-image img {
+  max-width: 367px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-blog__item-image img:hover {
+  opacity: 0.7;
+  transition: 0.4s;
+}
+.section-blog__item-info {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.section-blog__item-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #757575;
+  padding-right: 24px;
+}
+.section-blog__item-text_comment {
+  cursor: pointer;
+}
+.section-blog__item-text_comment:hover {
+  text-decoration: underline;
+}
+.section-blog__item-icon {
+  padding-right: 12px;
+}
+.section-blog__item-icon_comment {
+  cursor: pointer;
+}
+.section-blog__item-title {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 30px;
+  padding-top: 20px;
+}
+.section-blog__item-subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #757575;
+  padding-top: 30px;
+}
+.section-blog__item-subtitle_link {
+  font-weight: 700;
+  cursor: pointer;
+}
+.section-blog__item-subtitle_link:hover {
+  text-decoration: underline;
+}
+
+.section-footer {
+  height: 557px;
+  background-color: #191919;
+  color: #ffffff;
+}
+.section-footer .section-inner {
+  display: grid;
+  grid-template-columns: 268px 174px 174px 460px;
+  grid-template-rows: minmax(350px, auto);
+  grid-template-areas: "info links-1 links-2 subsc" "rights rights rights paym";
+  padding-top: 60px;
+}
+.section-footer__info {
+  grid-area: info;
+  max-width: 268px;
+  padding-right: 20px;
+}
+.section-footer__logo {
+  padding-bottom: 34px;
+}
+.section-footer__title {
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 30px;
+}
+.section-footer__title_invisible {
+  opacity: 0;
+}
+.section-footer__subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+}
+.section-footer__links {
+  width: 174px;
+  padding-right: 20px;
+}
+.section-footer__links_1 {
+  grid-area: links-1;
+}
+.section-footer__links_2 {
+  grid-area: links-2;
+}
+.section-footer__list {
+  list-style: none;
+  padding-left: 0;
+}
+.section-footer__list_uppercase {
+  text-transform: uppercase;
+}
+.section-footer__item {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  cursor: pointer;
+}
+.section-footer__item:hover {
+  text-decoration: underline;
+}
+.section-footer__subscribe {
+  grid-area: subsc;
+}
+.section-footer__form {
+  padding-top: 32px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: #757575;
+}
+.section-footer__form input {
+  width: 62%;
+  height: 60px;
+  border: 1px solid rgba(42, 42, 42, 0.2);
+  border-left: none;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 19px;
+}
+.section-footer__form button {
+  width: 38%;
+  height: 60px;
+  border: 1px solid rgba(42, 42, 42, 0.2);
+}
+.section-footer__social {
+  display: flex;
+}
+.section-footer__social img {
+  margin-right: 24px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-footer__social img:hover {
+  opacity: 0.7;
+  transition: 0.4s;
+}
+.section-footer__rights {
+  grid-area: rights;
+  margin-right: 20px;
+}
+.section-footer__payments {
+  grid-area: paym;
+  display: flex;
+  align-items: start;
+}
+.section-footer__payments-item {
+  padding-right: 10px;
 }

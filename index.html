@@ -39,10 +39,10 @@
             Free Shipping for all order of $99
         </div>
         <div class="section-header-social">
-            <img src="./assets/images/header/facebook.svg" alt="facebook">
-            <img src="./assets/images/header/whatsapp.svg" alt="whatsapp">
-            <img src="./assets/images/header/linkedin.svg" alt="linkedin">
-            <img src="./assets/images/header/twitter.svg" alt="twitter">
+            <img src="assets/images/common/facebook.svg" alt="facebook">
+            <img src="assets/images/common/whatsapp.svg" alt="whatsapp">
+            <img src="assets/images/common/linkedin.svg" alt="linkedin">
+            <img src="assets/images/common/twitter.svg" alt="twitter">
         </div>
         <div class="section-header-language">
             <div class="section-header-language__icon">
@@ -207,11 +207,13 @@
 <section class="section-outer section-drinks">
     <section class="section-inner">
         <div class="section-drinks__item section-drinks__item_1">
+            <img src="./assets/images/drinks/image-1.png" alt="" class="section-drinks__image">
             <div class="section-drinks__title">Summer Fruits</div>
             <div class="section-drinks__subtitle">100% All NaturalFruit Juice</div>
             <div class="section-drinks__button button-main">shop now</div>
         </div>
         <div class="section-drinks__item section-drinks__item_2">
+            <img src="./assets/images/drinks/image-2.png" alt="" class="section-drinks__image">
             <div class="section-drinks__title">Dried & Drink<br>Fruits</div>
             <div class="section-drinks__subtitle section-drinks__subtitle_2">100% All NaturalFruit Juice</div>
             <div class="section-drinks__button button-main">shop now</div>
@@ -225,15 +227,15 @@
     <section class="section-inner">
         <div class="section-latest__title">
             <div class="section-latest__title-text">Latest Product</div>
-            <div class="swiper-button-prev-custom latest-slider-button">
+            <div class="swiper-button-prev-latest latest-slider-button">
                 <img src="./assets/images/common/arrow-left.svg" alt="left">
             </div>
-            <div class="swiper-button-next-custom latest-slider-button">
+            <div class="swiper-button-next-latest latest-slider-button">
                 <img src="./assets/images/common/arrow-right.svg" alt="right">
             </div>
         </div>
         <!-- Slider main container -->
-        <div class="swiper">
+        <div class="swiper swiper-latest">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -498,18 +500,73 @@
 </section>
 <!-- /latest -->
 
-<!-- categories -->
-<section class="section-outer section-categories">
-    <section class="section-inner">
-        categories
-    </section>
-</section>
-<!-- /categories -->
-
 <!-- blog -->
 <section class="section-outer section-blog">
     <section class="section-inner">
-        blog
+        <div class="section-blog__title">From The Blog</div>
+        <hr class="line-main">
+        <div class="section-blog__wrapper">
+            <div class="section-blog__item">
+                <div class="section-blog__item-image">
+                    <img src="./assets/images/blog/1.png" alt="blog image">
+                </div>
+                <div class="section-blog__item-info">
+                    <img src="./assets/images/blog/date.svg" alt="date" class="section-blog__item-icon">
+                    <span class="section-blog__item-text">May 4,2021</span>
+                    <img src="./assets/images/blog/comment.svg" alt="comment"
+                         class="section-blog__item-icon section-blog__item-icon_comment">
+                    <span class="section-blog__item-text section-blog__item-text_comment">42</span>
+                </div>
+                <div class="section-blog__item-title">
+                    Busting Salad Myths: Eat a Well-Built Salad (If You Want To)
+                </div>
+                <div class="section-blog__item-subtitle">
+                    This is usually said when someone is trying to lose weight or be “super healthy.” First, to lose
+                    weight, it is widely understood that we must burn more calories than we eat. Thus <span
+                        class="section-blog__item-subtitle_link">Read More</span>
+                </div>
+            </div>
+            <div class="section-blog__item">
+                <div class="section-blog__item-image">
+                    <img src="./assets/images/blog/2.png" alt="blog image">
+                </div>
+                <div class="section-blog__item-info">
+                    <img src="./assets/images/blog/date.svg" alt="date" class="section-blog__item-icon">
+                    <span class="section-blog__item-text">May 4,2021</span>
+                    <img src="./assets/images/blog/comment.svg" alt="comment"
+                         class="section-blog__item-icon section-blog__item-icon_comment">
+                    <span class="section-blog__item-text section-blog__item-text_comment">42</span>
+                </div>
+                <div class="section-blog__item-title">
+                    Vitamin C: How Much and Which
+                    Sources Are Best for Boosting Immunity?
+                </div>
+                <div class="section-blog__item-subtitle">
+                    During cold and flu season, we try to do all we can to prevent illness or speed up how fast we
+                    recover from illness. One such strategy many employ is the use of Vitamin C for a natural remedy.
+                    <span class="section-blog__item-subtitle_link">Read More</span>
+                </div>
+            </div>
+            <div class="section-blog__item">
+                <div class="section-blog__item-image">
+                    <img src="./assets/images/blog/3.png" alt="blog image">
+                </div>
+                <div class="section-blog__item-info">
+                    <img src="./assets/images/blog/date.svg" alt="date" class="section-blog__item-icon">
+                    <span class="section-blog__item-text">May 4,2021</span>
+                    <img src="./assets/images/blog/comment.svg" alt="comment"
+                         class="section-blog__item-icon section-blog__item-icon_comment">
+                    <span class="section-blog__item-text section-blog__item-text_comment">42</span>
+                </div>
+                <div class="section-blog__item-title">
+                    Pump Up the Produce Power in Winter Meals
+                </div>
+                <div class="section-blog__item-subtitle">
+                    We’ve all been here before: When it seems the long, gray winter will never end and you make one more
+                    pot of hearty vegetable soup or another casserole; <span class="section-blog__item-subtitle_link">Read More</span>
+                </div>
+            </div>
+        </div>
     </section>
 </section>
 <!-- /blog -->
@@ -517,7 +574,59 @@
 <!-- footer -->
 <section class="section-outer section-footer">
     <section class="section-inner">
-        footer
+        <div class="section-footer__info">
+            <img src="./assets/images/footer/logo.svg" alt="logo" class="section-footer__logo">
+            <div class="section-footer__subtitle">Address: 60-49 Road 11378 New York</div>
+            <div class="section-footer__subtitle">Phone: +65 11.188.888</div>
+            <div class="section-footer__subtitle"> Email: hello@colorlib.com</div>
+        </div>
+        <div class="section-footer__links section-footer__links_1">
+            <div class="section-footer__title">Useful links</div>
+            <ul class="section-footer__list">
+                <li class="section-footer__item">About Us</li>
+                <li class="section-footer__item">About Our Shop</li>
+                <li class="section-footer__item">Secure Shopping</li>
+                <li class="section-footer__item">Delivery infomation</li>
+                <li class="section-footer__item">Privacy Policy</li>
+                <li class="section-footer__item">Our Sitemap</li>
+            </ul>
+        </div>
+        <div class="section-footer__links section-footer__links_2">
+            <div class="section-footer__title section-footer__title_invisible">Useful links</div>
+            <ul class="section-footer__list section-footer__list_uppercase">
+                <li class="section-footer__item">Who We Are</li>
+                <li class="section-footer__item">Our Services</li>
+                <li class="section-footer__item">Projects</li>
+                <li class="section-footer__item">Contact</li>
+                <li class="section-footer__item">Innovation</li>
+                <li class="section-footer__item">Testimonials</li>
+            </ul>
+        </div>
+        <div class="section-footer__subscribe">
+            <div class="section-footer__title">Sign Up for Our Newsletter</div>
+            <div class="section-footer__subtitle"> Get e-mail updates about our latest Shop and special offers.</div>
+            <form action="" class="section-footer__form">
+                <input type="text" placeholder="Enter email address">
+                <button type="submit" class="button-main">SUBSCRIBE</button>
+            </form>
+            <div class="section-footer__social">
+                <img src="./assets/images/common/facebook.svg" alt="facebook">
+                <img src="./assets/images/common/whatsapp.svg" alt="whatsapp">
+                <img src="./assets/images/common/linkedin.svg" alt="linkedin">
+                <img src="./assets/images/common/twitter.svg" alt="twitter">
+            </div>
+        </div>
+        </div>
+        <div class="section-footer__rights section-footer__subtitle">
+            Copyright ©2021 All rights reserved | This template is made with 💚 by LOGO
+        </div>
+        <div class="section-footer__payments">
+            <img src="./assets/images/footer/visa.svg" alt="visa" class="section-footer__payments-item">
+            <img src="./assets/images/footer/MC.svg" alt="MC" class="section-footer__payments-item">
+            <img src="./assets/images/footer/maestro.svg" alt="maestro" class="section-footer__payments-item">
+            <img src="./assets/images/footer/cirrus.svg" alt="cirrus" class="section-footer__payments-item">
+            <img src="./assets/images/footer/AE.svg" alt="AE" class="section-footer__payments-item">
+        </div>
     </section>
 </section>
 <!-- /footer -->

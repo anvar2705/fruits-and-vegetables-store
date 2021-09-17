@@ -1,18 +1,10 @@
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    loop: false,
+const swiperLatest = new Swiper('.swiper-latest', {
+    loop: true,
+    speed: 800,
 
     // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next-custom',
-        prevEl: '.swiper-button-prev-custom',
+        nextEl: '.swiper-button-next-latest',
+        prevEl: '.swiper-button-prev-latest',
     },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-
-    loop: true,
-    speed: 800
 });
