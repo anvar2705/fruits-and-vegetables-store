@@ -62,8 +62,13 @@ $font-logo: 'Inter', sans-serif;
 
 body {
   @include font-main;
-
   color: $color-text-main;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
 
 .section-outer {
@@ -100,15 +105,6 @@ body {
   border: none;
 }
 
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
-
-
 //Swiper Slider
 
 .swiper {
@@ -142,6 +138,30 @@ button:focus {
   height: 100%;
   object-fit: cover;
 }
+
+//Select
+
+.select {
+  position: relative;
+  z-index: 20;
+
+  &_is-active .select__body {
+    display: block;
+  }
+
+  &__header {}
+  &__value {}
+  &__body {
+    position: absolute;
+    display: none;
+  }
+  &__item {
+    &:hover {
+    }
+  }
+}
+
+
 
 // === / COMMON ===
 
@@ -197,6 +217,8 @@ button:focus {
     justify-content: space-between;
     align-items: center;
 
+    padding-right: 30px;
+
     img {
       cursor: pointer;
       transition: .4s;
@@ -208,26 +230,42 @@ button:focus {
     }
   }
 
+  &-select {
+  }
   &-language {
     flex: 0 1 162px;
     display: flex;
     align-items: center;
     font-weight: 400;
+    height: 27px;
+    padding-left: 10px;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.5);;
+
+    background-color: $color-header;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+      background-color: $color-background-dark;
+      transition: .2s;
+    }
 
 
     &__icon {
-      margin-left: 40px;
+      width: 27px;
     }
 
     &__text {
       margin-left: 9px;
+      margin-right: 9px;
+      width: 41px;
     }
 
     &__dropDownList {
-      margin-left: 12px;
       margin-right: 25px;
+
+      &_select {
+        opacity: 0;
+      }
     }
   }
 
@@ -236,6 +274,9 @@ button:focus {
     display: flex;
     align-items: center;
     font-weight: 400;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+
 
     &__icon {
       margin-left: 24px;
