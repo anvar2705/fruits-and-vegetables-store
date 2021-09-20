@@ -520,6 +520,12 @@ button:focus {
   align-items: center;
   font-weight: 400;
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-header-login:hover {
+  color: #c2c2c2;
+  transition: 0.4s;
 }
 .section-header-login__icon {
   margin-left: 24px;
@@ -634,6 +640,11 @@ button:focus {
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
+  transition: 0.4s;
+}
+.section-main__allDepartment:hover {
+  background-color: #4f7d00;
+  transition: 0.4s;
 }
 .section-main__allDepartment-icon {
   padding-left: 22px;
@@ -649,22 +660,9 @@ button:focus {
   grid-area: srch;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(42, 42, 42, 0.2);
-}
-.section-main__search-dropDownList {
-  flex: 0 1 31%;
-  display: flex;
-  align-items: center;
-  border-right: 1px solid rgba(42, 42, 42, 0.2);
-}
-.section-main__search-text {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 0 20px 0;
 }
 .section-main__search-form {
-  flex: 0 1 69%;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -672,7 +670,6 @@ button:focus {
   width: 75%;
   height: 50px;
   border: 1px solid rgba(42, 42, 42, 0.2);
-  border-left: none;
   padding-left: 20px;
   font-size: 16px;
   line-height: 19px;

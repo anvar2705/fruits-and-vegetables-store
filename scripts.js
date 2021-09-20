@@ -1,5 +1,4 @@
 
-
 //swiper slider
 const swiperLatest = new Swiper('.swiper-latest', {
     loop: true,
@@ -13,8 +12,8 @@ const swiperLatest = new Swiper('.swiper-latest', {
 });
 
 
-//custom select
-document.querySelector('.select').onclick = function (event) {
+//custom select for language
+document.querySelectorAll('.select').item(0).onclick = function (event) {
     let selectHeader = event.target.closest('.select__header'),
         selectItem = event.target.closest('.select__item'),
         select = event.target.closest('.select'),
@@ -29,9 +28,12 @@ document.querySelector('.select').onclick = function (event) {
         select.classList.remove('select_is-active')
     }
 }
+
 document.onclick = function (event) {
     let select = event.target.closest('.select')
     if (!select) {
-        document.querySelector('.select').classList.remove('select_is-active')
+        document.querySelectorAll('.select').forEach(item => {
+            item.classList.remove('select_is-active')
+        })
     }
 }
