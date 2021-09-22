@@ -1,0 +1,22 @@
+320 или 480 — телефоны/смартфоны
+800 — смартфоны/планшеты
+1024 — ноутбуки/планшеты
+1280 — десктопы/планшеты/ноутбуки
+1600 — десктопы
+
+
+
+    max-width: 1140px;
+
+@media (max-width: $screen-l-max = 1279) {
+    max-width: 900px;
+  }
+  @media (max-width: $screen-m-max = 1023) {
+    max-width: 700px;
+  }
+  @media (max-width: $screen-s-max = 799) {
+    max-width: 450px;
+  }
+  @media (max-width: $screen-xs-max = 479) {
+    max-width: 300px;
+  }

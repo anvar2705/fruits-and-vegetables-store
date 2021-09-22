@@ -2,17 +2,18 @@
 
 
 // === VARIABLES ===
-$screen-sm: 576px;
-$screen-md: 768px;
-$screen-lg: 992px;
-$screen-l: 1200px;
-$screen-xl: 1400px;
+$screen-xs: 320px;
+$screen-s: 480px;
+$screen-m: 800px;
+$screen-l: 1024px;
+$screen-xl: 1280px;
+$screen-xxl: 1600px;
 
-$screen-xs-max: 575px;
-$screen-sm-max: 767px;
-$screen-md-max: 991px;
-$screen-lg-max: 1199px;
-$screen-l-max: 1399px;
+$screen-xs-max: 479px;
+$screen-s-max: 799px;
+$screen-m-max: 1023px;
+$screen-l-max: 1279px;
+$screen-xl-max: 1599px;
 
 $color-white: #ffffff;
 $color-black: #000000;
@@ -57,13 +58,13 @@ $font-logo: 'Inter', sans-serif;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
 }
 
 body {
   @include font-main;
   color: $color-text-main;
 }
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -78,6 +79,19 @@ button:focus {
 .section-inner {
   max-width: 1140px;
   margin: 0 auto;
+
+  @media (max-width: $screen-l-max) {
+    max-width: 900px;
+  }
+  @media (max-width: $screen-m-max) {
+    max-width: 700px;
+  }
+  @media (max-width: $screen-s-max) {
+    max-width: 450px;
+  }
+  @media (max-width: $screen-xs-max) {
+    max-width: 300px;
+  }
 }
 
 .button-main {
@@ -93,11 +107,13 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:hover {
     background-color: $color-main-dark;
     transition: .4s;
   }
 }
+
 .line-main {
   width: 80px;
   height: 4px;
@@ -149,18 +165,22 @@ button:focus {
     display: block;
   }
 
-  &__header {}
-  &__value {}
+  &__header {
+  }
+
+  &__value {
+  }
+
   &__body {
     position: absolute;
     display: none;
   }
+
   &__item {
     &:hover {
     }
   }
 }
-
 
 
 // === / COMMON ===
@@ -179,16 +199,27 @@ button:focus {
     height: 100%;
     display: flex;
     align-items: center;
+
+    @media (max-width: $screen-s-max) {
+      justify-content: space-between;
+    }
   }
 
   &-email {
-    flex: 0 1 160px;
+    flex: 0 0 160px;
     display: flex;
     align-items: center;
 
     border-right: 1px solid rgba(255, 255, 255, 0.5);;
 
     font-weight: 700;
+
+    @media (max-width: $screen-m-max) {
+      margin-right: 60px;
+    }
+    @media (max-width: $screen-s-max) {
+      display: none;
+    }
 
     &__icon {
       margin-right: 8px;
@@ -202,22 +233,30 @@ button:focus {
   }
 
   &-proposal {
-    flex: 0 1 206px;
-
-    text-align: center;
+    flex: 0 0 500px;
 
     font-weight: 700;
 
-    margin-right: 400px;
+    padding-left: 20px;
+
+    @media (max-width: $screen-l-max) {
+      flex: 0 0 260px;
+    }
+    @media (max-width: $screen-m-max) {
+      display: none;
+    }
   }
 
   &-social {
-    flex: 0 1 142px;
+    flex: 0 0 180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 40px;
 
-    padding-right: 30px;
+    @media (max-width: $screen-s-max) {
+      display: none
+    }
 
     img {
       cursor: pointer;
@@ -231,19 +270,21 @@ button:focus {
   }
 
   &-select {
+    flex: 0 0 120px;
   }
+
   &-language {
-    flex: 0 1 162px;
     display: flex;
     align-items: center;
     font-weight: 400;
     height: 27px;
-    padding-left: 10px;
+    padding-left: 10%;
 
 
     background-color: $color-header;
     cursor: pointer;
     transition: .2s;
+
     &:hover {
       background-color: $color-background-dark;
       transition: .2s;
@@ -270,7 +311,7 @@ button:focus {
   }
 
   &-login {
-    flex: 0 1 82px;
+    flex: 0 0 180px;
     display: flex;
     align-items: center;
     font-weight: 400;
@@ -278,14 +319,15 @@ button:focus {
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: .4s;
+
     &:hover {
       color: $color-background-dark;
       transition: .4s;
     }
 
     &__icon {
-      margin-left: 24px;
-      margin-right: 10px;
+      padding-left: 24px;
+      padding-right: 10px;
     }
 
     &__text {
@@ -302,17 +344,43 @@ button:focus {
     height: 80px;
     display: flex;
     align-items: center;
+
+    @media (max-width: $screen-s-max) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @media (max-width: $screen-xs-max) {
+      height: 120px;
+    }
   }
 
   .logo {
     padding-right: 91px;
     cursor: pointer;
+
+    @media (max-width: $screen-l-max) {
+      padding-right: 65px;
+    }
+    @media (max-width: $screen-m-max) {
+      padding-right: 0;
+    }
   }
 
   &-panel {
     display: flex;
     align-items: center;
     padding-right: 216px;
+
+    @media (max-width: $screen-l-max) {
+      padding-right: 0;
+    }
+    @media (max-width: $screen-s-max) {
+      order: 1;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 10px;
+    }
+
 
     &__item {
       padding: 0 20px 0;
@@ -324,10 +392,20 @@ button:focus {
       cursor: pointer;
       transition: .4s;
 
+      @media (max-width: $screen-m-max) {
+        padding: 0 10px 0;
+      }
+
       &:hover {
         color: $color-main;
         transition: .4s;
         text-shadow: 0 0 10px $color-background;
+      }
+    }
+
+    .screen-xs-max-none {
+      @media (max-width: $screen-xs-max) {
+        display: none;
       }
     }
   }
@@ -409,10 +487,31 @@ button:focus {
     display: grid;
     grid-template-columns: repeat(16, 52.5px);
     grid-template-rows: 50px 440px 270px;
-    grid-template-areas: "dep dep dep dep srch srch srch srch srch srch srch srch srch supp supp supp"
-    "menu menu menu menu mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost"
-    "post-1 post-1 post-1 post-1 post-2 post-2 post-2 post-2 post-3 post-3 post-3 post-3 post-4 post-4 post-4 post-4";
+    grid-template-areas: "dep dep dep dep srch srch srch srch srch srch srch srch srch supp supp supp" "menu menu menu menu mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost" "post-1 post-1 post-1 post-1 post-2 post-2 post-2 post-2 post-3 post-3 post-3 post-3 post-4 post-4 post-4 post-4";
     grid-gap: 20px;
+
+    @media (max-width: $screen-l-max) {
+      grid-template-columns: repeat(4, 210px);
+      grid-template-areas: "dep srch srch supp" "menu mPost mPost mPost " "post-1 post-2 post-3 post-4";
+      grid-template-rows: 50px 440px 250px;
+    }
+    @media (max-width: $screen-m-max) {
+      grid-template-columns: repeat(16, 25px);
+      grid-template-areas: "dep dep dep dep srch srch srch srch srch srch srch supp supp supp supp supp" "menu menu menu menu mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost" "post-1 post-1 post-1 post-1 post-2 post-2 post-2 post-2 post-3 post-3 post-3 post-3 post-4 post-4 post-4 post-4";
+      grid-template-rows: 50px 440px 220px;
+    }
+    @media (max-width: $screen-s-max) {
+      grid-gap: 9px;
+      grid-template-columns: repeat(4, 24%);
+      grid-template-rows: repeat(2, 50px) repeat(4, 220px);
+      grid-template-areas:
+              "srch srch srch srch"
+              "dep dep supp supp"
+              "menu menu mPost mPost"
+              "menu menu mPost mPost"
+              "post-1 post-1 post-2 post-2"
+              "post-3 post-3 post-4 post-4";
+    }
   }
 
   .post-1 {
@@ -451,8 +550,10 @@ button:focus {
     }
 
     &-icon {
-      padding-left: 22px;
-      padding-right: 22px;
+      padding: 0 22px 0;
+      @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+        padding: 0 10px 0;
+      }
     }
 
     &-text {
@@ -460,6 +561,10 @@ button:focus {
       font-size: 16px;
       line-height: 19px;
       padding-right: 18px;
+      @media (max-width: $screen-m-max) {
+        padding-right: 0;
+      }
+
     }
   }
 
@@ -486,6 +591,7 @@ button:focus {
         font-size: 16px;
         line-height: 19px;
       }
+
       button {
         width: 25%;
         height: 50px;
@@ -509,6 +615,7 @@ button:focus {
       background-color: $color-background;
       cursor: pointer;
       transition: .4s;
+
       &:hover {
         background-color: $color-background-dark;
         transition: .4s;
@@ -548,9 +655,18 @@ button:focus {
 
       padding: 0 20px 0;
       cursor: pointer;
+      transition: .2s;
+      white-space: nowrap;
+      @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+        padding-right: 0;
+        padding-left: 10px;
+      }
 
       &:hover {
         color: $color-main;
+        box-shadow: 0 0 30px $color-background-dark;
+        transition: .2s;
+
       }
     }
   }
@@ -560,10 +676,24 @@ button:focus {
 
     background-color: $color-background;
     z-index: 1;
+
     &-description {
       padding-top: 86px;
       padding-left: 77px;
       max-width: 360px;
+
+      @media (max-width: $screen-l-max) {
+        padding-left: 40px;
+      }
+      @media (max-width: $screen-m-max) {
+        padding-left: 25px;
+        padding-top: 40px;
+        max-width: 100%;
+      }
+      @media (max-width: $screen-s-max) {
+        padding-top: 20px;
+        padding-left: 15px;
+      }
     }
 
     &-image {
@@ -571,8 +701,29 @@ button:focus {
       float: right;
       top: -335px;
       z-index: -1;
+
+      @media (max-width: $screen-l-max) {
+        top: -300px;
+      }
+      @media (max-width: $screen-m-max) {
+        top: -80px;
+      }
+      @media (max-width: $screen-s-max) {
+        top: 34px;
+      }
+
       img {
         max-width: 536px;
+
+        @media (max-width: $screen-l-max) {
+          max-width: 420px;
+        }
+        @media (max-width: $screen-m-max) {
+          max-width: 360px;
+        }
+        @media (max-width: $screen-s-max) {
+          max-width: 225px;
+        }
       }
     }
 
@@ -584,6 +735,9 @@ button:focus {
       color: $color-main;
 
       padding-bottom: 20px;
+      @media (max-width: $screen-s-max) {
+        padding-bottom: 12px;
+      }
     }
 
     &-subtitle {
@@ -592,6 +746,18 @@ button:focus {
       line-height: 50px;
 
       padding-bottom: 20px;
+
+      @media (max-width: $screen-s-max) {
+        font-size: 20px;
+        line-height: 1.5em;
+        padding-bottom: 12px;
+      }
+
+      &_br {
+        @media (max-width: $screen-m-max) {
+          display: none;
+        }
+      }
     }
 
     &-text {
@@ -601,6 +767,13 @@ button:focus {
       color: $color-text-secondary;
 
       padding-bottom: 60px;
+
+      @media (max-width: $screen-m-max) {
+        padding-bottom: 40px;
+      }
+      @media (max-width: $screen-s-max) {
+        padding-bottom: 12px;
+      }
     }
 
     &-button {
@@ -618,18 +791,36 @@ button:focus {
     &-image {
       padding-top: 20px;
 
+      @media (min-width: $screen-m) and (max-width: $screen-l-max) {
+        padding-bottom: 20px;
+      }
+
       img {
         max-width: 240px;
+
+        @media (max-width: $screen-l-max) {
+          max-width: 200px;
+        }
+        @media (max-width: $screen-m-max) {
+          max-width: 150px;
+        }
+        @media (max-width: $screen-s-max) {
+          max-width: 200px;
+        }
       }
     }
+
     &-title {
       font-weight: 900;
       font-size: 20px;
       line-height: 50px;
 
-      background-color: $color-white;
-      width: 230px;
+      max-width: 230px;
       text-align: center;
+
+      /*@media (max-width: $screen-l-max) {
+        width: 230px;
+      }*/
     }
   }
 
@@ -647,6 +838,7 @@ button:focus {
     height: 360px;
     padding-top: 100px;
   }
+
   &__image {
     position: absolute;
     top: 0;
@@ -669,34 +861,40 @@ button:focus {
     transition: .4s;
 
     &:hover {
-      background-color: rgba(0,0,0, .3);
+      background-color: rgba(0, 0, 0, .3);
       transition: .4s;
     }
+
     &_1 {
       //background: url("../assets/images/drinks/image-1.png");
       background-size: cover;
       padding-top: 66px;
     }
+
     &_2 {
       //background: url("../assets/images/drinks/image-2.png");
       background-size: cover;
       padding-top: 56px;
     }
   }
+
   &__title {
     font-weight: 900;
     font-size: 28px;
     line-height: 34px;
   }
+
   &__subtitle {
     font-weight: 400;
     font-size: 20px;
     line-height: 34px;
     padding-bottom: 30px;
+
     &_2 {
       padding-bottom: 6px;
     }
   }
+
   &__button {
     width: 140px;
     height: 50px;
@@ -708,7 +906,8 @@ button:focus {
 // === LATEST ===
 .section-latest {
 
-  .section-inner {}
+  .section-inner {
+  }
 
   &__title {
     display: flex;
@@ -725,6 +924,7 @@ button:focus {
 
       padding-right: 40px;
     }
+
     .latest-slider-button {
       width: 50px;
       height: 50px;
@@ -737,6 +937,7 @@ button:focus {
       cursor: pointer;
 
       margin-right: 10px;
+
       &:hover {
         background-color: $color-background-dark;
         transition: .4s;
@@ -751,6 +952,7 @@ button:focus {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 20px;
   }
+
   &__item {
     display: flex;
     align-items: center;
@@ -775,6 +977,7 @@ button:focus {
         width: 110px;
       }
     }
+
     &-description {
       display: flex;
       flex-direction: column;
@@ -783,16 +986,15 @@ button:focus {
       font-size: 20px;
       line-height: 30px;
     }
+
     &-title {
       font-weight: 400;
     }
+
     &-price {
       font-weight: 900;
     }
   }
-
-
-
 
 
 }
@@ -804,6 +1006,7 @@ button:focus {
 .section-blog {
 
   height: 840px;
+
   .section-inner {
   }
 
@@ -815,53 +1018,64 @@ button:focus {
     padding-top: 100px;
     padding-bottom: 16px;
   }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
 
     padding-top: 40px;
   }
+
   &__item {
     max-width: 367px;
 
 
     &-image {
       background-color: $color-black;
+
       img {
         max-width: 367px;
         cursor: pointer;
         transition: .4s;
+
         &:hover {
           opacity: .7;
           transition: .4s;
         }
       }
     }
+
     &-info {
       padding-top: 20px;
 
       display: flex;
       align-items: center;
     }
+
     &-text {
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
       color: $color-text-secondary;
       padding-right: 24px;
+
       &_comment {
         cursor: pointer;
+
         &:hover {
           text-decoration: underline;
         }
       }
     }
+
     &-icon {
       padding-right: 12px;
+
       &_comment {
         cursor: pointer;
       }
     }
+
     &-title {
       font-weight: 900;
       font-size: 20px;
@@ -869,6 +1083,7 @@ button:focus {
 
       padding-top: 20px;
     }
+
     &-subtitle {
       font-weight: 400;
       font-size: 16px;
@@ -876,9 +1091,11 @@ button:focus {
       color: $color-text-secondary;
 
       padding-top: 30px;
+
       &_link {
         font-weight: 700;
         cursor: pointer;
+
         &:hover {
           text-decoration: underline;
         }
@@ -899,9 +1116,7 @@ button:focus {
     display: grid;
     grid-template-columns: 268px 174px 174px 460px;
     grid-template-rows: minmax(350px, auto);
-    grid-template-areas:
-            "info links-1 links-2 subsc"
-            "rights rights rights paym";
+    grid-template-areas: "info links-1 links-2 subsc" "rights rights rights paym";
 
     padding-top: 60px;
   }
@@ -912,9 +1127,11 @@ button:focus {
     max-width: 268px;
     padding-right: 20px;
   }
+
   &__logo {
     padding-bottom: 34px;
   }
+
   &__title {
     font-weight: 900;
     font-size: 16px;
@@ -924,21 +1141,26 @@ button:focus {
       opacity: 0;
     }
   }
+
   &__subtitle {
     font-weight: 400;
     font-size: 14px;
     line-height: 30px;
   }
+
   &__links {
     width: 174px;
     padding-right: 20px;
+
     &_1 {
       grid-area: links-1;
     }
+
     &_2 {
       grid-area: links-2;
     }
   }
+
   &__list {
     list-style: none;
     padding-left: 0;
@@ -947,6 +1169,7 @@ button:focus {
       text-transform: uppercase;
     }
   }
+
   &__item {
     font-weight: 400;
     font-size: 14px;
@@ -957,9 +1180,11 @@ button:focus {
       text-decoration: underline;
     }
   }
+
   &__subscribe {
     grid-area: subsc;
   }
+
   &__form {
     padding-top: 32px;
     padding-bottom: 10px;
@@ -979,14 +1204,17 @@ button:focus {
       font-size: 16px;
       line-height: 19px;
     }
+
     button {
       width: 38%;
       height: 60px;
       border: 1px solid $color-border;
     }
   }
+
   &__social {
     display: flex;
+
     img {
       margin-right: 24px;
       cursor: pointer;
@@ -998,14 +1226,17 @@ button:focus {
       }
     }
   }
+
   &__rights {
     grid-area: rights;
     margin-right: 20px;
   }
+
   &__payments {
     grid-area: paym;
     display: flex;
     align-items: start;
+
     &-item {
       padding-right: 10px;
     }
