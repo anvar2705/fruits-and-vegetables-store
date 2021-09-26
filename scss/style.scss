@@ -31,18 +31,11 @@ $color-border: rgba(42, 42, 42, 0.2);
 
 $font-logo: 'Inter', sans-serif;
 
+$base: 4px;
 
-/*100: Thin;
-200: Extra Light (Ultra Light);
-300: Light;
-400: Normal;
-500: Medium;
-600: Semi Bold (Demi Bold);
-700: Bold;
-800: Extra Bold (Ultra Bold);
-900: Black (Heavy).*/
 
 // === / VARIABLES ===
+
 
 // === MIXINS ===
 
@@ -53,11 +46,28 @@ $font-logo: 'Inter', sans-serif;
 
 // === / MIXINS ===
 
+
+// === FUNCTIONS ===
+
+@function strip-unit($num) {
+  @return $num / ($num*0 + 1)
+}
+
+@function rem($num) {
+  @return (strip-unit($num) / 16) * 1rem
+}
+
+// === / FUNCTIONS ===
+
+
 // === COMMON ===
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+}
+
+html {
 }
 
 body {
@@ -101,8 +111,7 @@ button:focus {
   transition: .4s;
   color: $color-white;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  line-height: rem($base*5);
 
   display: flex;
   align-items: center;
@@ -115,8 +124,8 @@ button:focus {
 }
 
 .line-main {
-  width: 80px;
-  height: 4px;
+  width: $base*20;
+  height: $base;
   background-color: $color-main;
   border: none;
 }
@@ -125,12 +134,12 @@ button:focus {
 
 .swiper {
   width: 100%;
-  height: 370px;
+  height: $base*92.5;
 }
 
 .swiper-slide {
   text-align: center;
-  /*font-size: 18px;
+  /*font-size: rem($base*4.5);
   background: #fff;*/
 
   /* Center slide text vertically */
@@ -185,15 +194,16 @@ button:focus {
 
 // === / COMMON ===
 
+
 // === HEADER ===
 .section-header {
-  height: 47px;
+  height: $base*12;
 
   background-color: $color-header;
   color: $color-white;
 
-  font-size: 12px;
-  line-height: 14px;
+  font-size: rem($base*3);
+  line-height: $base*3.5;
 
   .section-inner {
     height: 100%;
@@ -206,7 +216,7 @@ button:focus {
   }
 
   &-email {
-    flex: 0 0 160px;
+    flex: 0 0 $base*40;
     display: flex;
     align-items: center;
 
@@ -215,14 +225,14 @@ button:focus {
     font-weight: 700;
 
     @media (max-width: $screen-m-max) {
-      margin-right: 60px;
+      margin-right: $base*15;
     }
     @media (max-width: $screen-s-max) {
       display: none;
     }
 
     &__icon {
-      margin-right: 8px;
+      margin-right: $base*2;
 
       img {
       }
@@ -233,14 +243,14 @@ button:focus {
   }
 
   &-proposal {
-    flex: 0 0 500px;
+    flex: 0 0 $base*125;
 
     font-weight: 700;
 
-    padding-left: 20px;
+    padding-left: $base*5;
 
     @media (max-width: $screen-l-max) {
-      flex: 0 0 260px;
+      flex: 0 0 $base*65;
     }
     @media (max-width: $screen-m-max) {
       display: none;
@@ -248,11 +258,11 @@ button:focus {
   }
 
   &-social {
-    flex: 0 0 180px;
+    flex: 0 0 $base*45;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 40px;
+    padding-right: $base*10;
 
     @media (max-width: $screen-s-max) {
       display: none
@@ -270,14 +280,14 @@ button:focus {
   }
 
   &-select {
-    flex: 0 0 120px;
+    flex: 0 0 $base*30;
   }
 
   &-language {
     display: flex;
     align-items: center;
     font-weight: 400;
-    height: 27px;
+    height: $base*7;
     padding-left: 10%;
 
 
@@ -292,17 +302,17 @@ button:focus {
 
 
     &__icon {
-      width: 27px;
+      width: $base*7;
     }
 
     &__text {
-      margin-left: 9px;
-      margin-right: 9px;
-      width: 41px;
+      margin-left: $base*2;
+      margin-right: $base*2;
+      width: $base*10;
     }
 
     &__dropDownList {
-      margin-right: 25px;
+      margin-right: $base*6;
 
       &_select {
         opacity: 0;
@@ -311,7 +321,7 @@ button:focus {
   }
 
   &-login {
-    flex: 0 0 180px;
+    flex: 0 0 $base*45;
     display: flex;
     align-items: center;
     font-weight: 400;
@@ -326,8 +336,8 @@ button:focus {
     }
 
     &__icon {
-      padding-left: 24px;
-      padding-right: 10px;
+      padding-left: $base*6;
+      padding-right: $base*2.5;
     }
 
     &__text {
@@ -341,25 +351,26 @@ button:focus {
 .section-navbar {
 
   .section-inner {
-    height: 80px;
+    height: $base*20;
     display: flex;
     align-items: center;
 
     @media (max-width: $screen-s-max) {
       flex-wrap: wrap;
       justify-content: space-between;
+      height: $base*27.5;
     }
     @media (max-width: $screen-xs-max) {
-      height: 120px;
+      height: $base*37.5;
     }
   }
 
   .logo {
-    padding-right: 91px;
+    padding-right: $base*22.5;
     cursor: pointer;
 
     @media (max-width: $screen-l-max) {
-      padding-right: 65px;
+      padding-right: $base*16.5;
     }
     @media (max-width: $screen-m-max) {
       padding-right: 0;
@@ -369,7 +380,7 @@ button:focus {
   &-panel {
     display: flex;
     align-items: center;
-    padding-right: 216px;
+    padding-right: $base*54;
 
     @media (max-width: $screen-l-max) {
       padding-right: 0;
@@ -378,28 +389,28 @@ button:focus {
       order: 1;
       justify-content: space-between;
       width: 100%;
-      padding-bottom: 10px;
+      padding-bottom: $base*2.5;
     }
 
 
     &__item {
-      padding: 0 20px 0;
+      padding: 0 $base*5 0;
 
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: rem($base*4);
+      line-height: $base*5;
       text-transform: uppercase;
       cursor: pointer;
       transition: .4s;
 
       @media (max-width: $screen-m-max) {
-        padding: 0 10px 0;
+        padding: 0 $base*2.5 0;
       }
 
       &:hover {
         color: $color-main;
         transition: .4s;
-        text-shadow: 0 0 10px $color-background;
+        text-shadow: 0 0 $base*2.5 $color-background;
       }
     }
 
@@ -416,13 +427,13 @@ button:focus {
 
     &__item {
       position: relative;
-      margin-right: 8px;
+      margin-right: $base*2;
       display: flex;
       justify-content: center;
       align-items: center;
 
-      height: 34px;
-      width: 34px;
+      height: $base*8.5;
+      width: $base*8.5;
       border-radius: 100%;
 
       cursor: pointer;
@@ -440,12 +451,12 @@ button:focus {
 
     &__value {
       position: absolute;
-      top: -2px;
-      left: 19px;
+      top: -$base*0.5;
+      left: $base*5;
       z-index: 10;
       box-sizing: content-box;
-      height: 14px;
-      width: 14px;
+      height: $base*3.5;
+      width: $base*3.5;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -454,17 +465,17 @@ button:focus {
       border-radius: 100%;
 
       font-weight: 700;
-      font-size: 10px;
-      line-height: 12px;
+      font-size: rem($base*2.5);
+      line-height: $base*3;
       color: $color-white;
     }
 
     &__amount {
-      padding-left: 4px;
+      padding-left: $base;
 
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: rem($base*4);
+      line-height: $base*5;
       color: $color-text-secondary;
 
       &_value {
@@ -477,6 +488,7 @@ button:focus {
 
 // === /NAVBAR ===
 
+
 // === MAIN ===
 .section-main {
 
@@ -488,7 +500,7 @@ button:focus {
     grid-template-columns: repeat(16, 52.5px);
     grid-template-rows: 50px 440px 270px;
     grid-template-areas: "dep dep dep dep srch srch srch srch srch srch srch srch srch supp supp supp" "menu menu menu menu mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost mPost" "post-1 post-1 post-1 post-1 post-2 post-2 post-2 post-2 post-3 post-3 post-3 post-3 post-4 post-4 post-4 post-4";
-    grid-gap: 20px;
+    grid-gap: $base*5;
 
     @media (max-width: $screen-l-max) {
       grid-template-columns: repeat(4, 210px);
@@ -501,16 +513,15 @@ button:focus {
       grid-template-rows: 50px 440px 220px;
     }
     @media (max-width: $screen-s-max) {
-      grid-gap: 9px;
-      grid-template-columns: repeat(4, 24%);
+      grid-gap: $base*3;
+      grid-template-columns: repeat(4, 23%);
       grid-template-rows: repeat(2, 50px) repeat(4, 220px);
-      grid-template-areas:
-              "srch srch srch srch"
-              "dep dep supp supp"
-              "menu menu mPost mPost"
-              "menu menu mPost mPost"
-              "post-1 post-1 post-2 post-2"
-              "post-3 post-3 post-4 post-4";
+      grid-template-areas: "srch srch srch srch" "dep dep supp supp" "menu menu mPost mPost" "menu menu mPost mPost" "post-1 post-1 post-2 post-2" "post-3 post-3 post-4 post-4";
+    }
+    @media (max-width: $screen-xs-max) {
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(3, 50px) 440px 400px repeat(4, 220px);
+      grid-template-areas: "supp" "srch" "dep" "menu" "mPost" "post-1" "post-2" "post-3" "post-4";
     }
   }
 
@@ -540,8 +551,8 @@ button:focus {
     cursor: pointer;
     color: $color-white;
     font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: rem($base*4);
+    line-height: $base*5;
     transition: .4s;
 
     &:hover {
@@ -550,17 +561,17 @@ button:focus {
     }
 
     &-icon {
-      padding: 0 22px 0;
+      padding: 0 $base*5.5 0;
       @media (min-width: $screen-m) and (max-width: $screen-m-max) {
-        padding: 0 10px 0;
+        padding: 0 $base*2.5 0;
       }
     }
 
     &-text {
       font-weight: 700;
-      font-size: 16px;
-      line-height: 19px;
-      padding-right: 18px;
+      font-size: rem($base*4);
+      line-height: $base*5;
+      padding-right: $base*4.5;
       @media (max-width: $screen-m-max) {
         padding-right: 0;
       }
@@ -584,17 +595,17 @@ button:focus {
 
       input {
         width: 75%;
-        height: 50px;
+        height: $base*12.5;
         border: 1px solid $color-border;
-        padding-left: 20px;
+        padding-left: $base*5;
 
-        font-size: 16px;
-        line-height: 19px;
+        font-size: rem($base*4);
+        line-height: $base*5;
       }
 
       button {
         width: 25%;
-        height: 50px;
+        height: $base*12.5;
         border: 1px solid $color-border;
       }
     }
@@ -606,8 +617,8 @@ button:focus {
     align-items: center;
 
     &-icon {
-      height: 50px;
-      width: 50px;
+      height: $base*12.5;
+      width: $base*12.5;
       border-radius: 100%;
       display: flex;
       justify-content: center;
@@ -623,15 +634,15 @@ button:focus {
     }
 
     &-text {
-      padding-left: 20px;
+      padding-left: $base*5;
 
       font-weight: 900;
-      font-size: 16px;
-      line-height: 20px;
+      font-size: rem($base*4);
+      line-height: $base*4;
 
       &_gray {
         font-weight: 400;
-        font-size: 12px;
+        font-size: rem($base*3);
         color: $color-text-secondary;
       }
     }
@@ -643,28 +654,28 @@ button:focus {
     border: 1px solid $color-border;
     margin: 0;
     padding-left: 0;
-    padding-top: 16px;
+    padding-top: $base*4;
 
     &-item {
       list-style: none;
 
       font-weight: 400;
-      font-size: 16px;
-      line-height: 36px;
+      font-size: rem($base*4);
+      line-height: $base*9;
       color: $color-text-secondary;
 
-      padding: 0 20px 0;
+      padding: 0 $base*5 0;
       cursor: pointer;
       transition: .2s;
       white-space: nowrap;
       @media (min-width: $screen-m) and (max-width: $screen-m-max) {
         padding-right: 0;
-        padding-left: 10px;
+        padding-left: $base*2.5;
       }
 
       &:hover {
         color: $color-main;
-        box-shadow: 0 0 30px $color-background-dark;
+        box-shadow: 0 0 $base*7.5 $color-background-dark;
         transition: .2s;
 
       }
@@ -677,80 +688,97 @@ button:focus {
     background-color: $color-background;
     z-index: 1;
 
+
     &-description {
-      padding-top: 86px;
-      padding-left: 77px;
-      max-width: 360px;
+      padding-top: $base*21.5;
+      padding-left: $base*19;
+      max-width: $base*90;
 
       @media (max-width: $screen-l-max) {
-        padding-left: 40px;
+        padding-left: $base*10;
       }
       @media (max-width: $screen-m-max) {
-        padding-left: 25px;
-        padding-top: 40px;
+        padding-left: $base*6;
+        padding-top: $base*10;
         max-width: 100%;
       }
       @media (max-width: $screen-s-max) {
-        padding-top: 20px;
-        padding-left: 15px;
+        padding-top: $base*5;
+        padding-left: $base*4;
+      }
+      @media (max-width: $screen-xs-max) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: $base*9;
       }
     }
 
     &-image {
       position: relative;
       float: right;
-      top: -335px;
+      top: -$base*84;
       z-index: -1;
 
       @media (max-width: $screen-l-max) {
-        top: -300px;
+        top: -$base*75;
       }
       @media (max-width: $screen-m-max) {
-        top: -80px;
+        top: -$base*20;
       }
       @media (max-width: $screen-s-max) {
-        top: 34px;
+        top: $base*8;
+      }
+      @media (max-width: $screen-xs-max) {
+        position: static;
+        top: 0;
+        left: 0;
+        float: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: $base*5;
       }
 
       img {
-        max-width: 536px;
+        max-width: $base*134;
 
         @media (max-width: $screen-l-max) {
-          max-width: 420px;
+          max-width: $base*105;
         }
         @media (max-width: $screen-m-max) {
-          max-width: 360px;
+          max-width: $base*90;
         }
         @media (max-width: $screen-s-max) {
-          max-width: 225px;
+          max-width: $base*56.25;
         }
       }
     }
 
     &-title {
       font-weight: 800;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: rem($base*4);
+      line-height: $base*5;
       letter-spacing: 0.2em;
       color: $color-main;
 
-      padding-bottom: 20px;
+      padding-bottom: $base*5;
       @media (max-width: $screen-s-max) {
-        padding-bottom: 12px;
+        padding-bottom: $base*3;
       }
     }
 
     &-subtitle {
       font-weight: 900;
-      font-size: 40px;
-      line-height: 50px;
+      font-size: rem($base*10);
+      line-height: $base*12.5;
 
-      padding-bottom: 20px;
+      padding-bottom: $base*5;
 
       @media (max-width: $screen-s-max) {
-        font-size: 20px;
+        font-size: rem($base*5);
         line-height: 1.5em;
-        padding-bottom: 12px;
+        padding-bottom: $base*3;
       }
 
       &_br {
@@ -762,23 +790,26 @@ button:focus {
 
     &-text {
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: rem($base*4);
+      line-height: $base*5;
       color: $color-text-secondary;
 
-      padding-bottom: 60px;
+      padding-bottom: $base*15;
 
       @media (max-width: $screen-m-max) {
-        padding-bottom: 40px;
+        padding-bottom: $base*10;
       }
       @media (max-width: $screen-s-max) {
-        padding-bottom: 12px;
+        padding-bottom: $base*3;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-bottom: $base*6;
       }
     }
 
     &-button {
-      width: 140px;
-      height: 50px;
+      width: $base*35;
+      height: $base*12.5;
     }
   }
 
@@ -789,37 +820,37 @@ button:focus {
     align-items: center;
 
     &-image {
-      padding-top: 20px;
+      padding-top: $base*5;
 
       @media (min-width: $screen-m) and (max-width: $screen-l-max) {
-        padding-bottom: 20px;
+        padding-bottom: $base*5;
       }
 
       img {
-        max-width: 240px;
+        max-width: $base*60;
 
         @media (max-width: $screen-l-max) {
-          max-width: 200px;
+          max-width: $base*50;
         }
         @media (max-width: $screen-m-max) {
-          max-width: 150px;
+          max-width: $base*37.5;
         }
         @media (max-width: $screen-s-max) {
-          max-width: 200px;
+          max-width: $base*50;
         }
       }
     }
 
     &-title {
       font-weight: 900;
-      font-size: 20px;
-      line-height: 50px;
+      font-size: rem($base*5);
+      line-height: $base*12.5;
 
-      max-width: 230px;
+      max-width: $base*57.5;
       text-align: center;
 
       /*@media (max-width: $screen-l-max) {
-        width: 230px;
+        width: $base*57.5;
       }*/
     }
   }
@@ -834,9 +865,26 @@ button:focus {
 
   .section-inner {
     display: flex;
-    align-items: center;
-    height: 360px;
-    padding-top: 100px;
+    align-items: start;
+    height: $base*90;
+    padding-top: $base*20;
+
+    @media (max-width: $screen-l-max) {
+      height: $base*75;
+    }
+    @media (max-width: $screen-m-max) {
+      height: $base*64;
+      padding-top: $base*17;
+    }
+    @media (max-width: $screen-s-max) {
+      flex-direction: column;
+      height: $base*130;
+      padding-top: $base*17;
+    }
+    @media (max-width: $screen-xs-max) {
+      height: $base*95;
+      padding-top: $base*15;
+    }
   }
 
   &__image {
@@ -849,16 +897,26 @@ button:focus {
   }
 
   &__item {
-    flex: 0 1 50%;
-    height: 100%;
+    flex: 0 0 49.1%;
 
-    margin-right: 20px;
-
-    padding-left: 290px;
+    padding-left: $base*72.5;
 
     position: relative;
 
     transition: .4s;
+
+    @media (max-width: $screen-l-max) {
+      padding-left: $base*57.5;
+    }
+    @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+      padding-left: $base*42.5;
+    }
+    @media (max-width: $screen-s-max) {
+      width: 100%;
+    }
+    @media (max-width: $screen-xs-max) {
+      padding-left: $base*37;
+    }
 
     &:hover {
       background-color: rgba(0, 0, 0, .3);
@@ -868,36 +926,91 @@ button:focus {
     &_1 {
       //background: url("../assets/images/drinks/image-1.png");
       background-size: cover;
-      padding-top: 66px;
+      padding-top: $base*16.5;
+
+      margin-right: 1.8%;
+
+      @media (max-width: $screen-l-max) {
+        padding-top: $base*8.5;
+      }
+      @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+        padding-top: $base*6.5;
+      }
+      @media (max-width: $screen-s-max) {
+        margin-right: 0;
+        margin-bottom: 1.8%;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-top: $base*4.5;
+      }
     }
 
     &_2 {
       //background: url("../assets/images/drinks/image-2.png");
       background-size: cover;
-      padding-top: 56px;
+      padding-top: $base*9;
+
+      @media (max-width: $screen-l-max) {
+        padding-top: $base*6;
+      }
+      @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+        padding-top: $base*4;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-top: $base*3;
+      }
     }
   }
 
   &__title {
     font-weight: 900;
-    font-size: 28px;
-    line-height: 34px;
+    font-size: rem($base*7);
+    line-height: 1.3em;
+
+    @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+      font-size: rem($base*5);
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: rem($base*4.5);
+    }
   }
 
   &__subtitle {
     font-weight: 400;
-    font-size: 20px;
-    line-height: 34px;
-    padding-bottom: 30px;
+    font-size: rem($base*5);
+    line-height: 2em;
+    padding-bottom: $base*7.5;
+
+    @media (max-width: $screen-l-max) {
+      font-size: rem($base*4);
+    }
+    @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+      font-size: rem($base*3.5);
+      padding-bottom: $base*3.5;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: rem($base*3);
+      padding-bottom: $base*3;
+    }
 
     &_2 {
-      padding-bottom: 6px;
+      padding-bottom: $base*1.5;
     }
   }
 
   &__button {
-    width: 140px;
-    height: 50px;
+    width: $base*35;
+    height: $base*12.5;
+
+    @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+      width: $base*35;
+      height: $base*10;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      width: $base*35;
+      height: $base*10;
+    }
   }
 }
 
@@ -910,39 +1023,40 @@ button:focus {
   }
 
   &__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding-top: 60px;
-    padding-bottom: 50px;
+    padding-top: $base*15;
+    padding-bottom: $base*12.5;
 
     &-text {
-      font-weight: 900;
-      font-size: 24px;
-      line-height: 50px;
-
-      padding-right: 40px;
-    }
-
-    .latest-slider-button {
-      width: 50px;
-      height: 50px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      background-color: $color-background;
-      border-radius: 100%;
-      transition: .4s;
-      cursor: pointer;
+      justify-content: center;
 
-      margin-right: 10px;
+      font-weight: 900;
+      font-size: rem($base*8);
+      line-height: $base*12.5;
 
-      &:hover {
-        background-color: $color-background-dark;
-        transition: .4s;
-      }
+      padding-bottom: $base*4;
+
     }
+
+    /*    .latest-slider-button {
+          width: $base*12.5;
+          height: $base*12.5;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-background;
+          border-radius: 100%;
+          transition: .4s;
+          cursor: pointer;
+
+          margin-right: $base*2.5;
+
+          &:hover {
+            background-color: $color-background-dark;
+            transition: .4s;
+          }
+        }*/
   }
 
   &__wrapper {
@@ -950,15 +1064,15 @@ button:focus {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: $base*5;
   }
 
   &__item {
     display: flex;
     align-items: center;
 
-    width: 367px;
-    height: 110px;
+    width: $base*92;
+    height: $base*27.5;
 
     cursor: pointer;
     background-color: $color-background;
@@ -971,10 +1085,10 @@ button:focus {
     }
 
     &-image {
-      margin-right: 20px;
+      margin-right: $base*5;
 
       img {
-        width: 110px;
+        width: $base*27.5;
       }
     }
 
@@ -983,8 +1097,8 @@ button:focus {
       flex-direction: column;
       align-items: start;
 
-      font-size: 20px;
-      line-height: 30px;
+      font-size: rem($base*5);
+      line-height: $base*7.5;
     }
 
     &-title {
@@ -1005,38 +1119,69 @@ button:focus {
 // === BLOG ===
 .section-blog {
 
-  height: 840px;
+  height: $base*210;
+
+  @media (max-width: $screen-s-max) {
+    height: $base*500;
+  }
+  @media (max-width: $screen-xs-max) {
+    height: $base*460;
+  }
 
   .section-inner {
   }
 
   &__title {
     font-weight: 900;
-    font-size: 34px;
-    line-height: 50px;
+    font-size: rem($base*8);
+    line-height: $base*12.5;
     text-align: center;
-    padding-top: 100px;
-    padding-bottom: 16px;
+    padding-top: $base*22;
+    padding-bottom: $base*4;
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
 
-    padding-top: 40px;
+    padding-top: $base*10;
+
+    @media (max-width: $screen-s-max) {
+      flex-direction: column
+    }
   }
 
   &__item {
-    max-width: 367px;
+    max-width: $base*92;
 
+    @media (min-width: $screen-l) and (max-width: $screen-l-max) {
+      max-width: $base*72;
+    }
+    @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+      max-width: $base*56;
+    }
+    @media (max-width: $screen-s-max) {
+      max-width: 100%;
+      padding-bottom: $base*8;
+    }
 
     &-image {
       background-color: $color-black;
 
       img {
-        max-width: 367px;
+        max-width: $base*92;
         cursor: pointer;
         transition: .4s;
+
+        @media (min-width: $screen-l) and (max-width: $screen-l-max) {
+          max-width: $base*72;
+        }
+        @media (min-width: $screen-m) and (max-width: $screen-m-max) {
+          max-width: $base*56;
+        }
+        @media (max-width: $screen-s-max) {
+          max-width: 100%;
+        }
 
         &:hover {
           opacity: .7;
@@ -1046,7 +1191,7 @@ button:focus {
     }
 
     &-info {
-      padding-top: 20px;
+      padding-top: $base*5;
 
       display: flex;
       align-items: center;
@@ -1054,10 +1199,10 @@ button:focus {
 
     &-text {
       font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
+      font-size: rem($base*4);
+      line-height: $base*5;
       color: $color-text-secondary;
-      padding-right: 24px;
+      padding-right: $base*6;
 
       &_comment {
         cursor: pointer;
@@ -1069,7 +1214,7 @@ button:focus {
     }
 
     &-icon {
-      padding-right: 12px;
+      padding-right: $base*3;
 
       &_comment {
         cursor: pointer;
@@ -1078,19 +1223,19 @@ button:focus {
 
     &-title {
       font-weight: 900;
-      font-size: 20px;
-      line-height: 30px;
+      font-size: rem($base*5);
+      line-height: $base*7.5;
 
-      padding-top: 20px;
+      padding-top: $base*5;
     }
 
     &-subtitle {
       font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: rem($base*4);
+      line-height: $base*6;
       color: $color-text-secondary;
 
-      padding-top: 30px;
+      padding-top: $base*7.5;
 
       &_link {
         font-weight: 700;
@@ -1108,49 +1253,98 @@ button:focus {
 
 // === FOOTER ===
 .section-footer {
-  height: 557px;
+  height: $base*139;
   background-color: $color-footer;
   color: $color-white;
+
+  @media (max-width: $screen-m-max) {
+    height: $base*170;
+  }
+  @media (max-width: $screen-s-max) {
+    height: $base*180;
+  }
+  @media (max-width: $screen-xs-max) {
+    height: $base*300;
+  }
 
   .section-inner {
     display: grid;
     grid-template-columns: 268px 174px 174px 460px;
-    grid-template-rows: minmax(350px, auto);
+    grid-template-rows: minmax(350px, auto) 50px;
     grid-template-areas: "info links-1 links-2 subsc" "rights rights rights paym";
 
-    padding-top: 60px;
+    padding-top: $base*15;
+
+    @media (max-width: $screen-l-max) {
+      grid-template-columns: 268px 174px 174px 280px;
+    }
+    @media (max-width: $screen-m-max) {
+      grid-template-columns: 40% 30% 30%;
+      grid-template-rows: 270px 240px 50px;
+
+      grid-template-areas:
+              "info links-1 links-2"
+              "subsc subsc subsc"
+              "rights rights paym";
+    }
+    @media (max-width: $screen-s-max) {
+      grid-template-rows: 270px 240px 70px 50px;
+
+      grid-template-areas:
+              "info links-1 links-2"
+              "subsc subsc subsc"
+              "rights rights rights"
+              "paym paym paym";
+    }
+    @media (max-width: $screen-xs-max) {
+      grid-template-columns: none;
+      grid-template-rows: repeat(4, 240px) 70px 50px;
+
+      grid-template-areas:
+              "info"
+              "links-1"
+              "links-2"
+              "subsc"
+              "rights"
+              "paym";
+    }
+
   }
 
   &__info {
     grid-area: info;
 
-    max-width: 268px;
-    padding-right: 20px;
+    max-width: $base*67;
+    padding-right: $base*5;
   }
 
   &__logo {
-    padding-bottom: 34px;
+    padding-bottom: $base*8.5;
   }
 
   &__title {
     font-weight: 900;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: rem($base*4);
+    line-height: $base*7.5;
 
     &_invisible {
       opacity: 0;
+
+      @media (max-width: $screen-xs-max) {
+        display: none;
+      }
     }
   }
 
   &__subtitle {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 30px;
+    font-size: rem($base*3.5);
+    line-height: $base*7.5;
   }
 
   &__links {
-    width: 174px;
-    padding-right: 20px;
+    width: $base*43.5;
+    padding-right: $base*5;
 
     &_1 {
       grid-area: links-1;
@@ -1172,8 +1366,8 @@ button:focus {
 
   &__item {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 30px;
+    font-size: rem($base*3.5);
+    line-height: $base*7.5;
     cursor: pointer;
 
     &:hover {
@@ -1186,8 +1380,8 @@ button:focus {
   }
 
   &__form {
-    padding-top: 32px;
-    padding-bottom: 10px;
+    padding-top: $base*8;
+    padding-bottom: $base*2.5;
 
     display: flex;
     align-items: center;
@@ -1196,19 +1390,30 @@ button:focus {
 
     input {
       width: 62%;
-      height: 60px;
+      height: $base*15;
       border: 1px solid $color-border;
       border-left: none;
-      padding-left: 20px;
+      padding-left: $base*5;
 
-      font-size: 16px;
-      line-height: 19px;
+      font-size: rem($base*4);
+      line-height: $base*5;
     }
 
     button {
       width: 38%;
-      height: 60px;
+      height: $base*15;
       border: 1px solid $color-border;
+    }
+
+    @media (min-width: $screen-l) and (max-width: $screen-l-max) {
+      input, button {
+        height: $base*12;
+      }
+    }
+    @media (max-width: $screen-s-max) {
+      input, button {
+        height: $base*12;
+      }
     }
   }
 
@@ -1216,7 +1421,7 @@ button:focus {
     display: flex;
 
     img {
-      margin-right: 24px;
+      margin-right: $base*6;
       cursor: pointer;
       transition: .4s;
 
@@ -1229,7 +1434,7 @@ button:focus {
 
   &__rights {
     grid-area: rights;
-    margin-right: 20px;
+    margin-right: $base*5;
   }
 
   &__payments {
@@ -1238,7 +1443,7 @@ button:focus {
     align-items: start;
 
     &-item {
-      padding-right: 10px;
+      padding-right: $base*2.5;
     }
   }
 }
