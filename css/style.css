@@ -347,6 +347,7 @@ body {
   font-family: "Lato", sans-serif;
   font-style: normal;
   color: #2a2a2a;
+  padding-top: 48px;
 }
 
 input:focus,
@@ -452,16 +453,22 @@ button:focus {
   display: none;
 }
 .section-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #2a2a2a;
+}
+.section-header .section-inner {
+  display: flex;
+  align-items: center;
   height: 48px;
   background-color: #2a2a2a;
   color: #ffffff;
   font-size: 0.75rem;
   line-height: 14px;
-}
-.section-header .section-inner {
-  height: 100%;
-  display: flex;
-  align-items: center;
 }
 @media (max-width: 799px) {
   .section-header .section-inner {
@@ -1086,14 +1093,37 @@ button:focus {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 5;
+}
+.section-drinks__image img {
   max-width: 100%;
-  z-index: -1;
+}
+.section-drinks__image:hover {
+  opacity: 0.7;
+  transition: 0.4s;
 }
 .section-drinks__item {
   flex: 0 0 49.1%;
+  height: 260px;
   padding-left: 290px;
   position: relative;
-  transition: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.section-drinks__item:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0;
+  transition-duration: 0.4s;
+}
+.section-drinks__item:hover:after {
+  opacity: 0.3;
+  transition-duration: 0.4s;
 }
 @media (max-width: 1279px) {
   .section-drinks__item {
@@ -1115,13 +1145,10 @@ button:focus {
     padding-left: 148px;
   }
 }
-.section-drinks__item:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: 0.4s;
-}
 .section-drinks__item_1 {
+  background: url("../assets/images/drinks/image-1.png");
   background-size: cover;
-  padding-top: 66px;
+  padding-top: 52px;
   margin-right: 1.8%;
 }
 @media (max-width: 1279px) {
@@ -1146,8 +1173,9 @@ button:focus {
   }
 }
 .section-drinks__item_2 {
+  background: url("../assets/images/drinks/image-2.png");
   background-size: cover;
-  padding-top: 36px;
+  padding-top: 40px;
 }
 @media (max-width: 1279px) {
   .section-drinks__item_2 {
@@ -1168,6 +1196,8 @@ button:focus {
   font-weight: 900;
   font-size: 1.75rem;
   line-height: 1.3em;
+  position: relative;
+  z-index: 10;
 }
 @media (min-width: 800px) and (max-width: 1023px) {
   .section-drinks__title {
@@ -1184,6 +1214,8 @@ button:focus {
   font-size: 1.25rem;
   line-height: 2em;
   padding-bottom: 30px;
+  position: relative;
+  z-index: 10;
 }
 @media (max-width: 1279px) {
   .section-drinks__subtitle {
@@ -1208,6 +1240,8 @@ button:focus {
 .section-drinks__button {
   width: 140px;
   height: 50px;
+  position: relative;
+  z-index: 10;
 }
 @media (min-width: 800px) and (max-width: 1023px) {
   .section-drinks__button {
