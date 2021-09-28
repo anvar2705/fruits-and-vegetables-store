@@ -1,6 +1,6 @@
 
 //swiper slider
-const swiperLatest = new Swiper('.swiper-latest', {
+new Swiper('.swiper-latest', {
     loop: true,
     speed: 800,
 

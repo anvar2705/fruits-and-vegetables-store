@@ -133,37 +133,7 @@ button:focus {
 
 //Swiper Slider
 
-.swiper {
-  width: 100%;
-  height: $base*92.5;
-}
 
-.swiper-slide {
-  text-align: center;
-  /*font-size: rem($base*4.5);
-  background: #fff;*/
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 //Select
 
@@ -1086,25 +1056,6 @@ button:focus {
       padding-bottom: $base*4;
 
     }
-
-    /*    .latest-slider-button {
-          width: $base*12.5;
-          height: $base*12.5;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: $color-background;
-          border-radius: 100%;
-          transition: .4s;
-          cursor: pointer;
-
-          margin-right: $base*2.5;
-
-          &:hover {
-            background-color: $color-background-dark;
-            transition: .4s;
-          }
-        }*/
   }
 
   &__wrapper {
