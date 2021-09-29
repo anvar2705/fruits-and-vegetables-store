@@ -721,9 +721,8 @@ button:focus {
   grid-area: post-4;
 }
 .section-main__allDepartment {
+  position: relative;
   grid-area: dep;
-  display: flex;
-  align-items: center;
   background-color: #7fad39;
   cursor: pointer;
   color: #ffffff;
@@ -736,12 +735,25 @@ button:focus {
   background-color: #4f7d00;
   transition: 0.4s;
 }
+.section-main__allDepartment-header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
 .section-main__allDepartment-icon {
-  padding: 0 22px 0;
+  height: 100%;
+  width: 62px;
+  position: relative;
+}
+.section-main__allDepartment-icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @media (min-width: 800px) and (max-width: 1023px) {
   .section-main__allDepartment-icon {
-    padding: 0 10px 0;
+    width: 40px;
   }
 }
 .section-main__allDepartment-text {
@@ -754,6 +766,29 @@ button:focus {
   .section-main__allDepartment-text {
     padding-right: 0;
   }
+}
+.section-main__allDepartment-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #7fad39;
+  margin: 0;
+  padding: 0;
+}
+.section-main__allDepartment-menu_active {
+  display: block;
+}
+.section-main__allDepartment-item {
+  padding-left: 16px;
+  list-style-type: none;
+  line-height: 40px;
+  transition: 0.4s;
+}
+.section-main__allDepartment-item:hover {
+  background-color: #4f7d00;
+  transition: 0.4s;
 }
 .section-main__search {
   grid-area: srch;
@@ -987,6 +1022,12 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.section-main__post:hover {
+  transition: 0.4s;
+  background-color: #c2c2c2;
 }
 .section-main__post-image {
   padding-top: 20px;

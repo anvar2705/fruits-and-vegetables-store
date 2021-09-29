@@ -518,10 +518,9 @@ button:focus {
   }
 
   &__allDepartment {
-    grid-area: dep;
+    position: relative;
 
-    display: flex;
-    align-items: center;
+    grid-area: dep;
 
     background-color: $color-main;
     cursor: pointer;
@@ -536,10 +535,26 @@ button:focus {
       transition: .4s;
     }
 
+    &-header {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
     &-icon {
-      padding: 0 $base*5.5 0;
+      height: 100%;
+      width: $base*15.5;
+
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
       @media (min-width: $screen-m) and (max-width: $screen-m-max) {
-        padding: 0 $base*2.5 0;
+        width: $base*10;
       }
     }
 
@@ -551,7 +566,34 @@ button:focus {
       @media (max-width: $screen-m-max) {
         padding-right: 0;
       }
+    }
 
+    &-menu {
+      display: none;
+      position: absolute;
+      top: $base*12.5;
+      left: 0;
+      width: 100%;
+
+      background-color: $color-main;
+      margin: 0;
+      padding: 0;
+
+      &_active {
+        display: block;
+      }
+    }
+    &-item {
+      padding-left: $base*4;
+
+      list-style-type: none;
+      line-height: $base*10;
+
+      transition: .4s;
+      &:hover {
+        background-color: $color-main-dark;
+        transition: .4s;
+      }
     }
   }
 
@@ -794,6 +836,13 @@ button:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+
+    transition: .4s;
+    &:hover {
+      transition: .4s;
+      background-color: $color-background-dark;
+    }
 
     &-image {
       padding-top: $base*5;

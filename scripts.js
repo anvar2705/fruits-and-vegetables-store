@@ -1,4 +1,3 @@
-
 //swiper slider
 const swiper = new Swiper('.swiper', {
     loop: true,
@@ -45,3 +44,10 @@ document.onclick = function (event) {
         })
     }
 }
+
+//section-main_allDepartments burger
+document.querySelector('.section-main__allDepartment')
+    .addEventListener('click', (event) => {
+        let menu = document.querySelector('.section-main__allDepartment-menu')
+        menu.classList.toggle('section-main__allDepartment-menu_active')
+    })
