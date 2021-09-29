@@ -68,6 +68,7 @@ $base: 4px;
 }
 
 html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -346,7 +347,7 @@ button:focus {
     cursor: pointer;
 
     @media (max-width: $screen-l-max) {
-      padding-right: $base*16.5;
+      padding-right: $base*10;
     }
     @media (max-width: $screen-m-max) {
       padding-right: 0;
@@ -356,10 +357,12 @@ button:focus {
   &-panel {
     display: flex;
     align-items: center;
-    padding-right: $base*54;
+    padding-left: $base*2;
+    padding-right: $base*45;
 
     @media (max-width: $screen-l-max) {
       padding-right: 0;
+      padding-left: 0;
     }
     @media (max-width: $screen-s-max) {
       order: 1;
@@ -372,6 +375,8 @@ button:focus {
     &__item {
       padding: 0 $base*5 0;
 
+      text-decoration: none;
+      color: inherit;
       font-weight: 400;
       font-size: rem($base*4);
       line-height: $base*5;

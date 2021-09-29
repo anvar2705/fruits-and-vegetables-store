@@ -38,9 +38,15 @@ document.querySelectorAll('.select').item(0).onclick = function (event) {
 
 document.onclick = function (event) {
     let select = event.target.closest('.select')
+    let allDepartments = event.target.closest('.section-main__allDepartment')
     if (!select) {
         document.querySelectorAll('.select').forEach(item => {
             item.classList.remove('select_is-active')
+        })
+    }
+    if (!allDepartments) {
+        document.querySelectorAll('.section-main__allDepartment-menu').forEach(item => {
+            item.classList.remove('section-main__allDepartment-menu_active')
         })
     }
 }
