@@ -1,13 +1,21 @@
 
 //swiper slider
-new Swiper('.swiper-latest', {
+const swiper = new Swiper('.swiper', {
     loop: true,
-    speed: 800,
+    speed: 700,
+
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+    },
 
     // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next-latest',
-        prevEl: '.swiper-button-prev-latest',
+        nextEl: '.section-latest__button_next',
+        prevEl: '.section-latest__button_prev',
     },
 });
 

@@ -131,10 +131,6 @@ button:focus {
   border: none;
 }
 
-//Swiper Slider
-
-
-
 //Select
 
 .select {
@@ -850,10 +846,10 @@ button:focus {
     padding-top: $base*20;
 
     @media (max-width: $screen-l-max) {
-      height: $base*75;
+      //height: $base*75;
     }
     @media (max-width: $screen-m-max) {
-      height: $base*64;
+      height: $base*86;
       padding-top: $base*17;
     }
     @media (max-width: $screen-s-max) {
@@ -908,14 +904,11 @@ button:focus {
 
       transition-duration: .4s;
     }
+
     &:hover:after {
       opacity: .3;
       transition-duration: .4s;
     }
-
-
-
-
 
     @media (max-width: $screen-l-max) {
       padding-left: $base*57.5;
@@ -929,7 +922,6 @@ button:focus {
     @media (max-width: $screen-xs-max) {
       padding-left: $base*37;
     }
-
 
 
     &_1 {
@@ -1038,6 +1030,7 @@ button:focus {
 .section-latest {
 
   .section-inner {
+    position: relative;
   }
 
   &__title {
@@ -1054,24 +1047,38 @@ button:focus {
       line-height: $base*12.5;
 
       padding-bottom: $base*4;
-
     }
   }
 
-  &__wrapper {
-    width: 100%;
+  &__container {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+  }
+
+  &__slide {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, $base*27.5);
     grid-gap: $base*5;
+
+    @media (max-width: $screen-m-max) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    @media (max-width: $screen-s-max) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
   }
 
   &__item {
     display: flex;
     align-items: center;
 
-    width: $base*92;
-    height: $base*27.5;
+    width: 100%;
 
     cursor: pointer;
     background-color: $color-background;
@@ -1085,6 +1092,10 @@ button:focus {
 
     &-image {
       margin-right: $base*5;
+
+      @media (min-width: $screen-m) and (max-width: $screen-l-max) {
+        margin-right: $base*2;
+      }
 
       img {
         width: $base*27.5;
@@ -1109,7 +1120,92 @@ button:focus {
     }
   }
 
+  &__button {
+    height: $base*12;
+    width: $base*12;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 $base*5 $color-background-dark;
+    border-radius: 100%;
+    cursor: pointer;
+    transition-duration: .4s;
+
+    @media (max-width: $screen-m-max) {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $color-background;
+      transition-duration: .4s;
+
+    }
+
+    &_next {
+      padding-left: $base;
+    }
+
+    &_prev {
+
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: $base*4;
+
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+      margin: $base*1.5;
+    }
+
+    .swiper-pagination {
+      position: static;
+      list-style-type: none;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+
+      &-bullet {
+        width: $base*2.5;
+        height: $base*2.5;
+        margin: 0 20px;
+        display: block;
+        opacity: 1;
+        background-color: $color-background-dark;
+
+        &-active {
+          background-color: $color-main;
+        }
+      }
+    }
+  }
+}
+
+//Swiper Slider
+
+.swiper {
+  width: 85%;
+  height: $base*60;
+
+  @media (max-width: $screen-m-max) {
+    height: $base*95;
+    width: 100%;
+  }
+  @media (max-width: $screen-s-max) {
+    height: $base*192;
+  }
+
+  &-wrapper {
+  }
+
+  &-slide {
+  }
 }
 
 // === /LATEST ===
@@ -1281,31 +1377,18 @@ button:focus {
       grid-template-columns: 40% 30% 30%;
       grid-template-rows: 270px 240px 50px;
 
-      grid-template-areas:
-              "info links-1 links-2"
-              "subsc subsc subsc"
-              "rights rights paym";
+      grid-template-areas: "info links-1 links-2" "subsc subsc subsc" "rights rights paym";
     }
     @media (max-width: $screen-s-max) {
       grid-template-rows: 270px 240px 70px 50px;
 
-      grid-template-areas:
-              "info links-1 links-2"
-              "subsc subsc subsc"
-              "rights rights rights"
-              "paym paym paym";
+      grid-template-areas: "info links-1 links-2" "subsc subsc subsc" "rights rights rights" "paym paym paym";
     }
     @media (max-width: $screen-xs-max) {
       grid-template-columns: none;
       grid-template-rows: repeat(4, 240px) 70px 50px;
 
-      grid-template-areas:
-              "info"
-              "links-1"
-              "links-2"
-              "subsc"
-              "rights"
-              "paym";
+      grid-template-areas: "info" "links-1" "links-2" "subsc" "rights" "paym";
     }
 
   }
